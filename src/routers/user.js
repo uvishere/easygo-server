@@ -37,6 +37,32 @@ router.post('/user/login', async (req, res) => {
     }
 })
 
+//Logout from one device
+router.post('/user/logout', auth, async (req, res) => {
+    try {
+        req.user.tokens = req.user.tokens.filter( token => {
+            return token.token !== req.token
+        })
+        await req.user.save()
+
+        res.status(200).send({message:"Successfully Logged out!"})
+    } catch (e) {
+        res.status(500).send(e)
+    }
+})
+
+//Logout from all devices
+router.post('/user/logoutall', auth,  async (req, res) => {
+    try {
+        req.user.tokens = []
+
+        await req.user.save()
+        res.send()
+    } catch (e) {
+        res.status(500).send(e)
+    }
+})
+
 
 
 module.exports = router

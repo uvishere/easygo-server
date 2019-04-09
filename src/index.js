@@ -13,7 +13,8 @@ app.use(userRouter)
 
 
 // Define Port Initialization settings
-const port = process.env.PORT || 3300
+const port = process.env.PORT
+
 
 app.listen(port, () => {
     console.log('Server is Up on Port '+ port)
