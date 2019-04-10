@@ -63,8 +63,6 @@ router.post('/user/logoutall', auth,  async (req, res) => {
     }
 })
 
-
-
 module.exports = router
 
 
