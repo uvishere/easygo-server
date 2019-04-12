@@ -20,7 +20,7 @@ env:
 beforeinstall:
 - npm install -g npm@^2
 install:
-- npm install --only=dev
+- npm install
 beforescript:
 - chmod 600 deploy && mv deploy ~/.ssh/idrsa
 script:
