@@ -1,6 +1,6 @@
 "use strict";
 
-require('dotenv').config()
+require('dotenv').config({ path: '../.env' })
 const express = require('express')
 require('./db/dbconfig')
 const userRouter = require('./routers/user')
