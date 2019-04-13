@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-ssh $REMOTEUSER@$REMOTEHOST
+ssh $REMOTEUSER@$REMOTEHOST StrictHostKeyChecking=accept-new
 cd  $REMOTEAPPDIR
 git checkout .
 git pull
