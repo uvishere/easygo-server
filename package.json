@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/index.js",
     "build": "echo \" Just Testing. Nothing enough to run. \" ",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "server":"pm2 start src/index.js --name \"easygo\""
   },
   "author": "",
   "license": "ISC",

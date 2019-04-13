@@ -1,6 +1,9 @@
 "use strict";
 
-require('dotenv').config({ path: '../.env' })
+/* Load all the environment variables first */
+const dotenv = require('dotenv')
+dotenv.config()
+
 const express = require('express')
 require('./db/dbconfig')
 const userRouter = require('./routers/user')
