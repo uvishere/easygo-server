@@ -13,7 +13,7 @@ branches:
   - master
 env:
   global:
-  - REMOTEAPPDIR=/home/deploy/easygo
+  - REMOTEAPPDIR=/home/deploy/easygo-test/easygo-server
   - REMOTEUSER=deploy
   - REMOTEHOST=178.128.92.164
   - PORT=8080
