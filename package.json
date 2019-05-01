@@ -7,7 +7,7 @@
     "start": "node src/index.js",
     "build": "echo \" Just Testing. Nothing enough to run. \" ",
     "dev": "nodemon src/index.js",
-    "server":"pm2 start src/index.js --name \"easygo\""
+    "server": "pm2 start src/index.js --name \"easygo\""
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +27,14 @@
     "validator": "^10.9.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "husky": "^2.1.0",
+    "nodemon": "^1.18.9",
+    "prettier": "^1.17.0",
+    "pretty-quick": "^1.10.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

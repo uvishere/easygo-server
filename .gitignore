@@ -2,3 +2,5 @@ node_modules/
 deploy
 .env
 ./scripts/deploy.sh
+
+.idea
