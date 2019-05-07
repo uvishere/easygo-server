@@ -1,13 +1,21 @@
 'use strict';
 
 const express = require('express');
+const consoleColor = require('chalk');
+
 const User = require('../models/user');
 const auth = require('../middleware/auth');
-const consoleColor = require('chalk');
+
+const { sendResponse } = require('../utils/response');
+
 const router = new express.Router();
 
+/**
+ * TODO: Start standardizing response
+ */
 //Register Users
 router.post('/user', async (req, res) => {
+  const response = sendResponse(res);
   const user = new User(req.body);
 
   try {
@@ -15,7 +23,10 @@ router.post('/user', async (req, res) => {
     const token = await user.generateAuthToken();
     res.status(201).send({ message: 'User Created Successfully', user, token });
   } catch (err) {
-    res.status(400).send({ error: 'error occourd in registration', err });
+    if (err.code === 11000) {
+      response({ type: 'conflict', message: 'Email is already used!' });
+    }
+    res.status(400).send({ error: 'error occurred in registration', err });
   }
 });
 
