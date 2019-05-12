@@ -80,8 +80,7 @@ router.get('/point', async (req, res) => {
           foreignField: '_id',
           as: 'ratings'
         }
-      },
-      {}
+      }
     ]);
   }
   response({

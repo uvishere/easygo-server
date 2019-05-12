@@ -37,7 +37,6 @@ router.post('/user/login', async (req, res) => {
     const verifiedUser = await User.findByCredentials(email, password);
 
     const token = await verifiedUser.generateAuthToken();
-    console.log('token', consoleColor.green(token));
 
     res
       .status(201)
